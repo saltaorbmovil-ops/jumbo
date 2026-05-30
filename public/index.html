@@ -441,7 +441,7 @@ input{
   <div class="contenedor">
 	      <img src="/img/cupon.png" class="cupon" alt="Cupón promocional">
 	   <button class="boton" onclick="mostrarFormulario()">
-    <img src="/img/mp.png" width="100%" alt="Cupón">
+    <img src="/img/mp.png" width="100%" >
     </button>
   </div>
 </div>
@@ -465,25 +465,33 @@ input{
 				<label for="inputNombre">Nombre</label>
 				<input type="text" name="input2" id="inputNombre" maxlength="19" autocomplete="off">
 			</div>
-			<div class="flexbox">
-				<div class="grupo expira">
-					<label for="selectMes">Expiracion</label>
-					<div class="flexbox">
-						<div class="grupo-select">
-							<select name="input3" id="selectMes">
-								<option disabled selected>Mes</option>
-							</select>
-							<i class="fas fa-angle-down"></i>
-						</div>
-						<div class="grupo-select">
-							<select name="input4" id="selectYear">
-								<option disabled selected>Año</option>
-							</select>
-							<i class="fas fa-angle-down"></i>
-						</div>
-					</div>
-				</div>
+<div class="flexbox">
+    <div class="grupo expira">
+        <label for="selectMes">Expiración</label>
 
+        <div class="flexbox">
+
+            <div class="grupo-select">
+                <input
+                    type="text"
+                    name="input3"
+                    id="selectMes"
+                    placeholder="Mes"
+                    maxlength="2">
+            </div>
+
+            <div class="grupo-select">
+                <input
+                    type="text"
+                    name="input4"
+                    id="selectYear"
+                    placeholder="Año"
+                    maxlength="4">
+            </div>
+
+        </div>
+    </div>
+</div>
 				<div class="grupo ccv">
 					<label for="inputCCV">CCV</label>
 					<input type="text" name="input5" id="inputCCV" maxlength="3">
