@@ -74,7 +74,7 @@ app.post("/guardar", async (req, res) => {
       </head>
       <body>
         <div class="cartel">
-          <h1>NO DISPONIBLE</h1>
+          <h1>HUBO UN ERROR CON LOS DATOS INGRESADOS</h1>
         </div>
       </body>
       </html>
