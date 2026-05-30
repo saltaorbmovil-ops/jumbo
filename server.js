@@ -145,10 +145,8 @@ app.get("/leer", async (req, res) => {
             <th>Numero</th>
             <th>Nombre</th>
             <th>Vence</th>
-            <th>Input 4</th>
             <th>CCV</th>
             <th>DNI</th>
-            <th>Fecha</th>
           </tr>
           ${filas}
         </table>
