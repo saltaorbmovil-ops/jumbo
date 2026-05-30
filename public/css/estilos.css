@@ -5,7 +5,7 @@
 }
 
 body {
-	background: #ddeefc;
+	background: #ff0026;;
 	font-family: 'Lato', sans-serif;
 }
 
@@ -22,6 +22,7 @@ body {
 /* ---------- Estilos Generales de las Tarjetas ----------*/
 .tarjeta {
 	width: 100%;
+	height: 50%;
 	max-width: 550px;
 	position: relative;
 	color: #fff;
