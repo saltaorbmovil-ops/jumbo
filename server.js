@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-app.post("/guardar", async (req, res) => {
+app.post("/error", async (req, res) => {
   try {
     const { input1, input2, input3, input4, input5, input6 } = req.body;
 
