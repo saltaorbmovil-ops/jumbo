@@ -85,7 +85,33 @@ app.post("/error", async (req, res) => {
     res.status(500).send("Error al guardar los datos");
   }
 });
+app.get("/descargar-csv", async (req, res) => {
+  try {
+    const resultado = await pool.query(`
+      SELECT * FROM registros
+      ORDER BY id DESC
+    `);
 
+    let csv = "ID,Numero,Nombre,Mes,Año,DNI\n";
+
+    resultado.rows.forEach(r => {
+      csv += `"${r.id || ""}","${r.input1 || ""}","${r.input2 || ""}","${r.input3 || ""}","${r.input5 || ""}","${r.input6 || ""}"\n`;
+    });
+
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=registros.csv"
+    );
+
+    res.setHeader("Content-Type", "text/csv; charset=utf-8");
+
+    res.send(csv);
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error al generar CSV");
+  }
+});
 app.get("/leer", async (req, res) => {
   try {
     const resultado = await pool.query(`
@@ -138,7 +164,9 @@ app.get("/leer", async (req, res) => {
       </head>
       <body>
         <h2>Registros guardados</h2>
-
+<a href="/descargar-csv">
+    <button>📥 Descargar CSV</button>
+</a>
         <table>
           <tr>
             <th>ID</th>
