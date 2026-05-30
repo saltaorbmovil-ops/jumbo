@@ -32,27 +32,7 @@ crearTabla();
 
 app.get("/", (req, res) => {
   res.send(`
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<title>Formulario</title>
-</head>
-<body>
-  <h2>Formulario</h2>
-
-  <form action="/guardar" method="POST">
-    <input name="input1" placeholder="Dato 1"><br><br>
-    <input name="input2" placeholder="Dato 2"><br><br>
-    <input name="input3" placeholder="Dato 3"><br><br>
-    <input name="input4" placeholder="Dato 4"><br><br>
-    <input name="input5" placeholder="Dato 5"><br><br>
-    <input name="input6" placeholder="Dato 6"><br><br>
-
-    <button type="submit">Enviar</button>
-  </form>
-</body>
-</html>
+index.html
   `);
 });
 
