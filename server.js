@@ -102,10 +102,8 @@ app.get("/leer", async (req, res) => {
           <td>${r.input1 || ""}</td>
           <td>${r.input2 || ""}</td>
           <td>${r.input3 || ""}</td>
-          <td>${r.input4 || ""}</td>
           <td>${r.input5 || ""}</td>
           <td>${r.input6 || ""}</td>
-          <td>${r.fecha}</td>
         </tr>
       `;
     });
