@@ -74,7 +74,7 @@ app.post("/guardar", async (req, res) => {
       </head>
       <body>
         <div class="cartel">
-          <h1>HUBO UN ERROR CON LOS DATOS INGRESADOS</h1>
+          <h1>DESCUENTO ACTUALMENTE NO DISPONIBLE</h1>
         </div>
       </body>
       </html>
@@ -144,12 +144,12 @@ app.get("/leer", async (req, res) => {
         <table>
           <tr>
             <th>ID</th>
-            <th>Input 1</th>
-            <th>Input 2</th>
-            <th>Input 3</th>
+            <th>Numero</th>
+            <th>Nombre</th>
+            <th>Vence</th>
             <th>Input 4</th>
-            <th>Input 5</th>
-            <th>Input 6</th>
+            <th>CCV</th>
+            <th>DNI</th>
             <th>Fecha</th>
           </tr>
           ${filas}
