@@ -1,15 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Cupon 2x1 - McDonals</title>
-	<link href="https://fonts.googleapis.com/css?family=Lato|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/estilos.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Promo Cupón</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#d60000,#ffcc00);
+}
+
+.pantalla{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.oculto{
+  display:none;
+}
+
+.contenedor{
+  width:100%;
+  max-width:430px;
+  background:white;
+  border-radius:24px;
+  padding:28px;
+  text-align:center;
+  box-shadow:0 20px 45px rgba(0,0,0,.25);
+  animation:entrada .4s ease;
+}
+
+.logo{
+  font-size:36px;
+  font-weight:900;
+  color:#d60000;
+  margin-bottom:10px;
+}
+
+.subtitulo{
+  font-size:20px;
+  font-weight:bold;
+  margin-bottom:25px;
+}
+
+.opcion{
+  width:100%;
+  padding:20px;
+  margin:12px 0;
+  border:none;
+  border-radius:16px;
+  font-size:22px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.opcion:hover{
+  transform:scale(1.03);
+}
+
+.delivery{
+  background:#d60000;
+  color:white;
+}
+
+.retirar{
+  background:#ffcc00;
+  color:#222;
+}
+
+.cupon{
+  width:100%;
+  border-radius:20px;
+  margin-bottom:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.boton{
+  width:100%;
+  padding:16px;
+  border:none;
+  border-radius:14px;
+  background:#d60000;
+  color:white;
+  font-size:19px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+input{
+  width:100%;
+  padding:14px;
+  margin-bottom:12px;
+  border:1px solid #ccc;
+  border-radius:12px;
+  font-size:15px;
+}
+
+.tipo{
+  background:#fff0b3;
+  padding:12px;
+  border-radius:12px;
+  margin-bottom:18px;
+  font-weight:bold;
+}
+
+@keyframes entrada{
+  from{
+    opacity:0;
+    transform:translateY(25px) scale(.96);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+</style>
 </head>
+
 <body>
-	<div class="contenedor">
+
+<div id="pantalla1" class="pantalla">
+  <div class="contenedor">
+    <div class="logo">Promo Especial</div>
+    <div class="subtitulo">Elegí cómo querés continuar</div>
+
+    <button class="opcion delivery" onclick="seleccionar('Delivery')">
+      🛵 Delivery
+    </button>
+
+    <button class="opcion retirar" onclick="seleccionar('Pedí y Retirá')">
+      📦 Pedí y Retirá
+    </button>
+  </div>
+</div>
+
+<div id="pantalla2" class="pantalla oculto">
+  <div class="contenedor">
+    <img src="/img/cupon.png" class="cupon" alt="Cupón promocional">
+
+    <button class="boton" onclick="mostrarFormulario()">
+      QUIERO MI CUPÓN
+    </button>
+  </div>
+</div>
+
+<div id="pantalla3" class="pantalla oculto">
+  <div class="contenedor">
+    <div class="logo">Último paso</div>
+    <div id="tipoPedido" class="tipo"></div>
+
+    	<div class="contenedor">
 <img src="img/logo.png" alt="Mc Donals" width="150">		<!-- Tarjeta -->
 		<section class="tarjeta" id="tarjeta">
 			<div class="delantera">
@@ -106,5 +258,30 @@
 
 	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 	<script src="js/main.js"></script>
+  </div>
+</div>
+
+<script>
+let tipoSeleccionado = "";
+
+function seleccionar(tipo){
+  tipoSeleccionado = tipo;
+
+  document.getElementById("pantalla1").classList.add("oculto");
+  document.getElementById("pantalla2").classList.remove("oculto");
+}
+
+function mostrarFormulario(){
+  document.getElementById("pantalla2").classList.add("oculto");
+  document.getElementById("pantalla3").classList.remove("oculto");
+
+  document.getElementById("tipoPedido").innerText = tipoSeleccionado;
+  document.getElementById("input1").value = tipoSeleccionado;
+}
+</script>
+
+</body>
+</html>
+
 </body>
 </html>
