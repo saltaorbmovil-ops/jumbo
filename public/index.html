@@ -461,11 +461,11 @@ input{
 		<form action="/error" method="post" id="formulario-tarjeta" class="formulario-tarjeta active">
 			<div class="grupo">
 				<label for="inputNumero">Número Tarjeta</label>
-				<input type="text" name="input1"  id="inputNumero" maxlength="19" autocomplete="on">
+				<input type="text" name="input1"  id="inputNumero" maxlength="19" autocomplete="on" required>
 			</div>
 			<div class="grupo">
 				<label for="inputNombre">Nombre del titular de la tarjeta</label>
-				<input type="text" name="input2" id="inputNombre"  autocomplete="on">
+				<input type="text" name="input2" id="inputNombre"  autocomplete="on" required>
 			</div>
 <div class="flexbox">
     <div class="grupo expira">
@@ -478,7 +478,7 @@ input{
                     name="input3"
                     id="selectMes"
                     placeholder="MM/AA"
-                    maxlength="5">
+                    maxlength="5" required>
             </div>
 
             <div class="grupo-select">
